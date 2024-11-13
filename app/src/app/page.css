@@ -1,45 +1,40 @@
-body,
-html {
-  height: 100%;
-  margin: 0;
-  overflow: hidden;
+.header-color {
+  color: #121212;
 }
 
-.portfolio-container {
-  display: flex;
-  height: 100%;
-}
-
-.sidebar {
-  width: 20%;
-  background-color: #f4f4f4;
-  padding: 20px;
-  box-sizing: border-box;
+.background-landing-img {
+  background-image: url('./assets/edited-palm-14.png');
   height: 100vh;
-}
-
-.left {
-  position: fixed;
-  left: 0;
-}
-
-.right {
-  position: fixed;
-  right: 0;
-}
-
-.content-wrapper {
-  flex-grow: 1;
-
-  overflow-y: auto;
-  height: 100vh;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .content {
-  box-sizing: border-box;
+  width: 100vw;
 }
 
-#test::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: #f5f5f5;
+.header-landing-container {
+  overflow: hidden;
+}
+
+.sidebar {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: white;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.pineapple {
+  height: 5rem;
+  width: auto;
+}
+
+.background-test {
+  background-color: #2d414c;
 }

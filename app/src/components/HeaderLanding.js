@@ -1,18 +1,48 @@
+'use client';
 import './headerlanding.css';
-import NaturePng from '../app/assets/nature.png';
+import Nature from '@/app/assets/Nature.png';
+import Image from 'next/image';
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export default function HeaderLanding() {
+  const imageRef = useRef(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: '.container',
+          start: 'top top',
+          end: '+=100%',
+          pin: true,
+          scrub: true,
+          markers: false,
+        },
+      })
+      .to(imageRef.current, {
+        scale: 3,
+        z: 350,
+        transformOrigin: 'center center',
+        ease: 'power1.inOut',
+      });
+  });
+
   return (
-    <div className="h-full bg-cyan-700">
-      {/* <div className="text-white text-6xl ml-6 pt-6">Hello, my name is</div>
-      <div className="text-white text-5xl ml-6 pt-4">Andoni Romano.</div>
-      <div className="header-color italic text-4xl ml-6 pt-4">
-        I´m a front end developer
-      </div> */}
-      <img
-        src="https://uploads-ssl.webflow.com/5cff83ac2044e22cb8cf2f11/5d13364599bb70e3560cc4e5_background-min%203.png"
-        alt="Nature"
-      />
+    <div className="container">
+      <main className="content">
+        <div className="background-landing-img">
+          <Image
+            className=" nature w-full h-full"
+            ref={imageRef}
+            src={Nature}
+            alt="Nature"
+          />
+        </div>
+      </main>
     </div>
   );
 }
