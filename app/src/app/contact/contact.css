@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+/* body {
+  background-color: #15151e;
+} */
+
+.container {
+  background-color: #15151e;
+  height: 50vh;
+}
+
+.section-header {
+  font-family: 'Staatliches', cursive;
+  font-size: 10vh;
+  color: #5b8498;
+}
+
+#name,
+#lname,
+#subject {
+  background-color: #15151e;
+  border: 1px solid #5b8498;
+  border-radius: 3px;
+}
+
+#submit {
+  background-color: #5b8498;
+  width: 10vw;
+  height: 4vh;
+  border-radius: 3px;
+}

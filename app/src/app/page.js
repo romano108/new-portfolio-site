@@ -6,31 +6,14 @@ import Pineapple from '@/app/assets/pineapple.png';
 import { gsap } from 'gsap';
 import React, { useRef, useEffect } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import PalmAndDolphin from '@/app/assets/palm-dolphin.png';
+import About from './about/page';
+import Contact from './contact/page';
 
 export default function Home() {
   const pineAppleRef = useRef(null);
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    // gsap.defaults({ ease: 'none', duration: 2 });
-    const tl = gsap.timeline();
-
-    tl.from('.section-one', { xPercent: -100 })
-      .from('.section-two', { xPercent: 100 })
-      .from('.section-three', { xPercent: -100 });
-
-    ScrollTrigger.create({
-      animation: tl,
-      trigger: 'section-container',
-      start: 'top top',
-      end: '+=4000',
-      scrub: true,
-      pin: true,
-      anticipatePin: 2,
-    });
-
-    gsap.to(pineAppleRef.current, { scale: 1.5, duration: 1 });
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <div>
@@ -43,19 +26,12 @@ export default function Home() {
         <div className="header-landing-container">
           <HeaderLanding />
         </div>
-        <div className="flex flex-col section-container">
-          <section className="section-one background-test h-screen w-full">
-            ONE
-          </section>
-          <section className="section-two bg-blue-300 h-screen w-full">
-            TWO
-          </section>
-          {/* <section className="section-three bg-orange-300 h-screen">
-            THREE
-          </section> */}
-          <section className="section-four bg-green-300 h-48"></section>
+        <div className="ml-44">
+          <About />
+          <Contact />
         </div>
       </div>
     </div>
+    // </div>
   );
 }

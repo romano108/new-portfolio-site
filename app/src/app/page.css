@@ -31,10 +31,25 @@
 }
 
 .pineapple {
-  height: 5rem;
+  height: 15rem;
   width: auto;
 }
 
 .background-test {
   background-color: #2d414c;
+}
+
+.palm-dolphin {
+  max-height: 20rem;
+  width: auto;
+  /* margin-left: 14rem; */
+  /* display: flex;
+  justify-content: center; */
+}
+
+.about-paragraph {
+  margin-left: 100px;
+}
+.about-header {
+  margin-left: 100px;
 }
