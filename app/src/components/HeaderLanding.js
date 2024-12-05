@@ -24,7 +24,7 @@ export default function HeaderLanding() {
         },
       })
       .to(imageRef.current, {
-        scale: 3,
+        scale: 8,
         z: 350,
         transformOrigin: 'center center',
         ease: 'power1.inOut',

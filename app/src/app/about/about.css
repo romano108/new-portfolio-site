@@ -68,6 +68,19 @@ body {
   height: 50vh;
 }
 
+.space-70vh {
+  height: 70vh;
+}
+
 .space-100vh {
   height: 100vh;
+}
+
+.section-header {
+  display: flex;
+}
+
+.hand {
+  height: 15rem;
+  width: auto;
 }

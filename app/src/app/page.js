@@ -3,17 +3,13 @@ import HeaderLanding from '@/components/HeaderLanding';
 import './page.css';
 import Image from 'next/image';
 import Pineapple from '@/app/assets/pineapple.png';
-import { gsap } from 'gsap';
 import React, { useRef, useEffect } from 'react';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import PalmAndDolphin from '@/app/assets/palm-dolphin.png';
 import About from './about/page';
 import Contact from './contact/page';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   const pineAppleRef = useRef(null);
-
-  useEffect(() => {}, []);
 
   return (
     <div>
@@ -30,8 +26,10 @@ export default function Home() {
           <About />
           <Contact />
         </div>
+        <div>
+          <Footer />
+        </div>
       </div>
     </div>
-    // </div>
   );
 }

@@ -34,7 +34,7 @@ function HorizontalScrollComponent() {
 
   return (
     <div className="appContainer">
-      <div className="space-50vh lightBG"></div>
+      <div className="space-30vh lightBG"></div>
       <div className="racesWrapper">
         <div className="races" ref={racesRef}>
           <div>
@@ -79,7 +79,7 @@ function HorizontalScrollComponent() {
           </div>
         </div>
       </div>
-      <div className="space-100vh lightBG"></div>
+      <div className="space-50vh lightBG"></div>
     </div>
   );
 }
