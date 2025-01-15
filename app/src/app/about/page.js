@@ -1,11 +1,23 @@
 'use client';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useImperativeHandle } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './about.css'; // Assuming you have a CSS file for styling
 
-function HorizontalScrollComponent() {
+const HorizontalScrollComponent = React.forwardRef((props, ref) => {
   const racesRef = useRef(null);
+  const aboutRef = useRef(null);
+  const educationRef = useRef(null);
+  const blogRef = useRef(null);
+  const testimonialsRef = useRef(null);
+
+  // Exposing refs to the parent component
+  useImperativeHandle(ref, () => ({
+    aboutRef,
+    educationRef,
+    blogRef,
+    testimonialsRef,
+  }));
 
   useEffect(() => {
     let racesWidth = racesRef.current.offsetWidth;
@@ -37,7 +49,7 @@ function HorizontalScrollComponent() {
       <div className="space-30vh lightBG"></div>
       <div className="racesWrapper">
         <div className="races" ref={racesRef}>
-          <div>
+          <div id="about" ref={aboutRef}>
             <h2>About Me</h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
@@ -47,7 +59,7 @@ function HorizontalScrollComponent() {
               feugiat sem id nunc efficitur, in pretium massa suscipit.
             </p>
           </div>
-          <div>
+          <div id="education" ref={educationRef}>
             <h2>Education</h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
@@ -57,7 +69,7 @@ function HorizontalScrollComponent() {
               feugiat sem id nunc efficitur, in pretium massa suscipit.
             </p>
           </div>
-          <div>
+          <div id="blog" ref={blogRef}>
             <h2>Blog</h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
@@ -67,7 +79,7 @@ function HorizontalScrollComponent() {
               feugiat sem id nunc efficitur, in pretium massa suscipit.
             </p>
           </div>
-          <div>
+          <div id="testimonials" ref={testimonialsRef}>
             <h2>Testimonials</h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
@@ -82,6 +94,6 @@ function HorizontalScrollComponent() {
       <div className="space-50vh lightBG"></div>
     </div>
   );
-}
+});
 
 export default HorizontalScrollComponent;
